@@ -1,0 +1,26 @@
+.nav {
+  background-color: #001221;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 2em;
+  align-items: center;
+  .logo {
+    height: 4em;
+  }
+
+  .links {
+    display: flex;
+  }
+  .link {
+    margin-left: 1em;
+    font-size: 1.2em;
+  }
+  a {
+    text-decoration: none;
+    color: #c62368;
+    transition: all 0.2s ease;
+    &:hover {
+      filter: brightness(1.3);
+    }
+  }
+}

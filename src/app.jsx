@@ -16,7 +16,7 @@ function App() {
   }, [loading]);
 
   return (
-    <AnimateSharedLayout>
+    <AnimateSharedLayout type='crossfade'>
       <AnimatePresence>
         {loading ? (
           <motion.div key='loader'>
@@ -24,30 +24,16 @@ function App() {
           </motion.div>
         ): (
           <>
-          <Nav/>
-          <Home/>
-          {!loading && (
-            <>
-            <div className="transitionImg1 final1">
-                <motion.img 
-                transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
-                src='/images/loadingImg4.jpeg' 
-                  layoutId= 'main-image-1' />
+            <div className="app">
+              <Nav/>
+              <Home loading={loading}/>
             </div>
-            <div className="transitionImg2 fina2l">
-                <motion.img 
-                transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
-                src='/images/loadingImg5.jpeg' 
-                  layoutId= 'main-image-2' />
-            </div>
-            </>
-          )}
-           </> 
+          </> 
         )
         }
       </AnimatePresence>
     </AnimateSharedLayout>
   );
 }
-
+ 
 export default App;
