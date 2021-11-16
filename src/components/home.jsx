@@ -1,4 +1,5 @@
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Home = ({ loading }) => {
   return (
@@ -9,8 +10,8 @@ const Home = ({ loading }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             ease: "easeInOut",
-            duration: 0.5,
-            delay: 0.8,
+            duration: 0.8,
+            delay: 0.6,
           }}
           className="home"
         >
@@ -26,7 +27,7 @@ const Home = ({ loading }) => {
               <span>Artisan</span> support all artists to help keep going with thier art
                 career for next young generation.
               </p>
-              <button className="home-btn">View artworks </button>
+              <Link to='/gallery'><button className="home-btn">View artworks </button></Link>
             </motion.div>
             {!loading && (
               <motion.div className="transitionImg final">
